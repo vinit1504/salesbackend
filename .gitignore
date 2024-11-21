@@ -1,0 +1,52 @@
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Build output
+dist/
+build/
+tmp/
+out/
+
+# Dependency directories
+jspm_packages/
+
+# Environment variable files
+
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Coverage directory used by testing tools like Jest or nyc
+coverage/
+
+# Package manager lock files (if you use one, ignore the others)
+yarn.lock
+pnpm-lock.yaml
+package-lock.json
+
+# Local OS files
+*.log
+*.bak
+*.tmp
+
+# Other files
+node_repl_history
+*.log
