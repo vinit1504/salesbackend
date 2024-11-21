@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 8000; // Setting the port from environment vari
 // CORS Configuration
 
 app.use(cors({
-  origin: ['http://localhost:5173'],
+  origin: ['http://localhost:5173' , 'https://salesfrontend-eight.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Cache-Control', 'Expires', 'Pragma'],
   credentials: true,
