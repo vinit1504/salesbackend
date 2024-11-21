@@ -138,9 +138,10 @@ export const userLogin = async (req, res) => {
 
     // Store the token in an HTTP-only cookie for secure authentication
     res.cookie("token", token, {
-      httpOnly: true, // Prevents client-side access to the cookie
-      secure: process.env.NODE_ENV === "production", // Ensure secure cookies in production
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production", // Use secure cookies only in production
       maxAge: 3600000, // Cookie expiration time (1 hour)
+      sameSite: "Strict", // Optional: Prevents sending cookies in cross-site requests
     });
 
     // Omit the password from the user object before sending the response
