@@ -14,16 +14,17 @@ const app = express(); // Creating an Express application
 const PORT = process.env.PORT || 8000; // Setting the port from environment variable or default to 8000
 
 // CORS Configuration
-const corsOptions = {
-  origin: "https://salesfrontend-eight.vercel.app", // Allowing requests only from this frontend origin
-  credentials: true, // Allowing cookies to be sent along with the request
-  methods: "GET,POST,PUT,DELETE", // Enabling specific HTTP methods
-};
+
+app.use(cors({
+  origin: 'https://salesfrontend-eight.vercel.app', // This specifies your frontend's URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS' , 'PATCH'], // Allowed methods
+  allowedHeaders: ['Content-Type', 'Authorization', 'Cache-Control', 'Expires', 'Pragma'],
+  credentials: true, // Headers your frontend may send
+}));
 
 app.use(express.json()); // Middleware to parse JSON request bodies
 app.use(cookieParser()); // Middleware to parse cookies from requests
 app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded request bodies
-app.use(cors(corsOptions)); // Enabling CORS with the defined options
 
 // Routes
 app.use("/api/v1/email", sequenceRoutes); // API route for handling email-related functionality
