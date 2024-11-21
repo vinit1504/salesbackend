@@ -16,11 +16,12 @@ const PORT = process.env.PORT || 8000; // Setting the port from environment vari
 // CORS Configuration
 
 app.use(cors({
-  origin: 'https://salesfrontend-eight.vercel.app', // This specifies your frontend's URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS' , 'PATCH'], // Allowed methods
+  origin: ['http://localhost:5173'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Cache-Control', 'Expires', 'Pragma'],
-  credentials: true, // Headers your frontend may send
+  credentials: true,
 }));
+
 
 app.use(express.json()); // Middleware to parse JSON request bodies
 app.use(cookieParser()); // Middleware to parse cookies from requests
