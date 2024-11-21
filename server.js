@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 8000; // Setting the port from environment vari
 
 // CORS Configuration
 const corsOptions = {
-  origin: "http://localhost:5173", // Allowing requests only from this frontend origin
+  origin: "https://salesfrontend-eight.vercel.app", // Allowing requests only from this frontend origin
   credentials: true, // Allowing cookies to be sent along with the request
   methods: "GET,POST,PUT,DELETE", // Enabling specific HTTP methods
 };
